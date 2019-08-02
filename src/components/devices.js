@@ -1,8 +1,18 @@
 import React from "react";
 import axios from "axios";
+import { connect } from "react-redux";
 
 import Device from "./device";
 import { ReactComponent as EmptyStateImage } from "../images/undraw_synchronize_ccxk.svg";
+
+const ADD_DEVICE = "ADD_DEVICE";
+
+const addDevice = device => {
+  return {
+    type: ADD_DEVICE,
+    payload: device,
+  };
+};
 
 class Devices extends React.Component {
   state = { devices: [] };
@@ -14,15 +24,15 @@ class Devices extends React.Component {
           return response.data;
         })
         .then(data => {
-          this.setState({ devices: data.data });
+          this.props.addDevice(data.data);
         });
     }, 0);
   }
   render() {
     return (
       <>
-        {Boolean(this.state.devices.length > 0) ? (
-          this.state.devices.map(device => (
+        {Boolean(this.props.devices.length > 0) ? (
+          this.props.devices.map(device => (
             <Device key={device.id} attributes={device.attributes} />
           ))
         ) : (
@@ -37,4 +47,14 @@ class Devices extends React.Component {
     );
   }
 }
-export default Devices;
+
+const mapStateToProps = state => {
+  return {
+    devices: state.devices,
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { addDevice }
+)(Devices);
