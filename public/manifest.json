@@ -1,0 +1,16 @@
+{
+  "short_name": "Remote Lock frontend test",
+  "name": "Remote Lock frontend test created by @eduarmreyes",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon",
+      "url": "https://favicon.io/favicon-generator/?t=R&ff=Roboto+Slab&fs=110&fc=%23Fdfdfd&b=rounded&bc=%23ffb603"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffb603",
+  "background_color": "#fdfdfd"
+}
