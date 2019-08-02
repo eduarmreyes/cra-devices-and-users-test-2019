@@ -7,7 +7,7 @@ function formatDate(date, timezone) {
     day: "numeric",
     hour: "numeric",
     minute: "numeric",
-    timeZone: timezone
+    timeZone: timezone,
   };
   return new Intl.DateTimeFormat("en-US", options).format(_date);
 }

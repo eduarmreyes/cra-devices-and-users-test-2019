@@ -1,5 +1,6 @@
-import "../switch.styles.css";
 import React from "react";
+
+import "../switch.styles.css";
 
 class Switch extends React.Component {
   render() {
@@ -7,7 +8,7 @@ class Switch extends React.Component {
     const btnClassName = [
       className,
       "toggle-btn",
-      on ? "toggle-btn-on" : "toggle-btn-off"
+      on ? "toggle-btn-on" : "toggle-btn-off",
     ]
       .filter(Boolean)
       .join(" ");
